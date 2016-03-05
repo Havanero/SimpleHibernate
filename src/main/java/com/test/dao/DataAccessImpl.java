@@ -1,5 +1,6 @@
 package com.test.dao;
 
+import com.test.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,5 +29,19 @@ public class DataAccessImpl {
                 .setParameter("custName", name)
                 .getResultList();
     }
+
+    public Member addNewMember(String  name, String email, String phone_number){
+        Member u = new Member();
+        u.setName(name);
+        u.setEmail(email);
+        u.setPhone_number(phone_number);
+        em.getTransaction().begin();
+        em.persist(u); //em.merge(u); for updates
+        em.getTransaction().commit();
+        em.close();
+
+        return u;
+    }
+
 
 }

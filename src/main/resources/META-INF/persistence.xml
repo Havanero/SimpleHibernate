@@ -20,7 +20,7 @@
           <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
           <property name="javax.persistence.jdbc.user" value=""/>
           <property name="javax.persistence.jdbc.password" value=""/>
-          <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:xx/nelsondb"/>
+          <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/nelsondb"/>
           <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
          <!--<property name="hibernate.hbm2ddl.auto" value="create-drop" />-->
                   <property name="hibernate.show_sql" value="false"/>

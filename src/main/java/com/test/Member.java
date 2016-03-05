@@ -8,13 +8,19 @@ import java.io.Serializable;
 public class Member implements Serializable {
 
     public Member() {}
+
+    @Id
+    @Column(name = "id", unique = true)
+    @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="member_seq")
+    @SequenceGenerator(name="member_seq", sequenceName="member_seq", allocationSize=1)
     Integer id;
+
     String name;
     String email;
     String phone_number;
 
-    @Id
-    @Column(name = "id", unique = true, nullable = false)
+
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }
@@ -51,6 +57,6 @@ public class Member implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "[" + getId()  + " "+ getName() + " " + getEmail() + " " + getPhone_number() + "]";
     }
 }
