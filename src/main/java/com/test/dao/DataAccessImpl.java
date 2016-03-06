@@ -5,9 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 import java.util.List;
 
 
+@NamedQuery(name ="getMember", query = "")
 public class DataAccessImpl {
 
     EntityManager em;
